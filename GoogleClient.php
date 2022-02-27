@@ -4,9 +4,9 @@ require 'vendor/autoload.php';
 
 class GoogleClient
 {
- protected $client_id = '<CLIENT_ID>';
-    protected $client_secret = '<CLIENT_SECRET>';
-    protected $redirect_uri = '<REDIRECTED_URI>';
+    protected $client_id = '';
+    protected $client_secret = '';
+    protected $redirect_uri = '';
     
     protected $scopes = array('https://www.googleapis.com/auth/drive',);
 
@@ -202,5 +202,17 @@ class GoogleClient
         
         // Returning file id of newly uploaded file
         return $file->id;
+    }
+
+    public function deleteFile($fileId)
+    {
+        // If file name is 'none' then give the orignal file name
+
+
+        // Delete file By ID
+        $file = $this->service->files->delete($fileId);
+        
+        // Returning file id of newly uploaded file
+        return $file;
     }
 }
