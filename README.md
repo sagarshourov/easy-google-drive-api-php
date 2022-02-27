@@ -104,6 +104,18 @@ $folderId = $google->createFolder($parentFolderId,$folderName);
 $list = listFilesFolders($search,$parentId,$type='all');
 ```
 
+```php
+/**
+ *  Delete files
+ *  @param string $search complete or partial name of file or folder to search
+ *  @param string $parentId parent folder id or root from which the list of files or folders or both will be generated
+ *  @param string $type='all' file or folder (files,folders or all)
+ *  @return array list of files or folders or both from given parent directory
+ */
+$list = deleteFile($fileId); // EX : $google->deleteFile('/1af_o7AX1ajArMCy-r5z8i2VuYmVEHZXs1');
+```
+
+
 
 #### Todos
   - More ease to use API.
